@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bpdb6xbdaoswi"]
+[gd_scene load_steps=30 format=3 uid="uid://bpdb6xbdaoswi"]
 
 [ext_resource type="Script" path="res://scenes/main_character.gd" id="1_tj3i8"]
 [ext_resource type="Texture2D" uid="uid://dt3iy5ijt0y2r" path="res://scenes/main_character_assets/Idle (32x32).png" id="2_sbfus"]
@@ -48,10 +48,6 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvmr5"]
 atlas = ExtResource("2_sbfus")
 region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4llsj"]
-atlas = ExtResource("3_08syi")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slvsg"]
 atlas = ExtResource("4_20bpq")
@@ -139,11 +135,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4llsj")
+"texture": ExtResource("3_08syi")
 }],
 "loop": true,
 "name": &"jump",
@@ -188,11 +184,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"running",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wq2u7"]
-size = Vector2(33, 49)
+size = Vector2(33, 41)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_tj3i8")
@@ -202,7 +198,9 @@ texture_filter = 1
 scale = Vector2(1.75, 1.90625)
 sprite_frames = SubResource("SpriteFrames_0q6fu")
 animation = &"jump"
+autoplay = "default"
+frame_progress = 0.0232261
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_wq2u7")
