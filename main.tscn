@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://di0j4yv4rgbsy"]
+[gd_scene load_steps=7 format=3 uid="uid://di0j4yv4rgbsy"]
 
 [ext_resource type="Texture2D" uid="uid://c00o0qt2laqit" path="res://Pink.png" id="1_u30n5"]
 [ext_resource type="Texture2D" uid="uid://c2r5t5f1lncg7" path="res://Terrain (16x16).png" id="2_2udil"]
@@ -452,6 +452,13 @@ texture = ExtResource("2_2udil")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vm7k3")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3765"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -473,3 +480,27 @@ layer_0/tile_data = PackedInt32Array(786432, 393216, 0, 786433, 458752, 0, 78643
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_ymye8")]
 position = Vector2(172, 90)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInfoBox" type="Panel" parent="Control"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 329.0
+offset_bottom = 214.0
+
+[node name="AvatarFrame" type="Panel" parent="Control/PlayerInfoBox"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3765")
