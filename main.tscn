@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://di0j4yv4rgbsy"]
+[gd_scene load_steps=11 format=3 uid="uid://di0j4yv4rgbsy"]
 
 [ext_resource type="Texture2D" uid="uid://c00o0qt2laqit" path="res://Pink.png" id="1_u30n5"]
 [ext_resource type="Texture2D" uid="uid://c2r5t5f1lncg7" path="res://Terrain (16x16).png" id="2_2udil"]
 [ext_resource type="PackedScene" uid="uid://bpdb6xbdaoswi" path="res://scenes/main_character.tscn" id="3_ymye8"]
+[ext_resource type="Texture2D" uid="uid://3bay5236wurd" path="res://scenes/main_character_assets/Jump (32x32).png" id="4_q17rd"]
+[ext_resource type="Texture2D" uid="uid://w1wq5bcpi8ia" path="res://scenes/ui_assets/token.svg" id="5_mchfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm7k3"]
 texture = ExtResource("2_2udil")
@@ -452,8 +454,22 @@ texture = ExtResource("2_2udil")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vm7k3")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cldyp"]
+bg_color = Color(0.411765, 0.576471, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3765"]
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5vhg"]
+bg_color = Color(0.866667, 1, 0, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -490,17 +506,59 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerInfoBox" type="Panel" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.407843)
 show_behind_parent = true
 layout_mode = 0
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 329.0
-offset_bottom = 214.0
+offset_right = 156.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cldyp")
 
 [node name="AvatarFrame" type="Panel" parent="Control/PlayerInfoBox"]
 layout_mode = 1
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 60.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3765")
+
+[node name="Avatar" type="TextureRect" parent="Control/PlayerInfoBox/AvatarFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.91
+offset_bottom = 3.6
+texture = ExtResource("4_q17rd")
+
+[node name="CoinCounter" type="Panel" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.407843)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 24.0
+offset_right = -20.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5vhg")
+
+[node name="Coin" type="TextureRect" parent="Control/CoinCounter"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -22.5
+offset_bottom = 22.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_mchfq")
+expand_mode = 1
