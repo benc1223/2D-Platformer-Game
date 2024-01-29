@@ -534,6 +534,17 @@ anchor_bottom = 0.91
 offset_bottom = 3.6
 texture = ExtResource("4_q17rd")
 
+[node name="CharacterName" type="Label" parent="Control/PlayerInfoBox"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 13
+text = "JumperMan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CoinCounter" type="Panel" parent="Control"]
 self_modulate = Color(1, 1, 1, 0.407843)
 show_behind_parent = true
