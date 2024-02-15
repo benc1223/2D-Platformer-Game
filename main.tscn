@@ -497,25 +497,32 @@ layer_0/tile_data = PackedInt32Array(786432, 393216, 0, 786433, 458752, 0, 78643
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_ymye8")]
 position = Vector2(172, 90)
 
-[node name="Control" type="Control" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-4, 14)
+
+[node name="Control" type="Control" parent="CharacterBody2D"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -90.0
+offset_right = -172.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerInfoBox" type="Panel" parent="Control"]
+[node name="PlayerInfoBox" type="Panel" parent="CharacterBody2D/Control"]
 self_modulate = Color(1, 1, 1, 0.407843)
 show_behind_parent = true
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 160.0
-offset_bottom = 80.0
+offset_left = 608.0
+offset_top = -218.0
+offset_right = 744.0
+offset_bottom = -162.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cldyp")
 
-[node name="AvatarFrame" type="Panel" parent="Control/PlayerInfoBox"]
+[node name="AvatarFrame" type="Panel" parent="CharacterBody2D/Control/PlayerInfoBox"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -526,7 +533,7 @@ offset_bottom = 20.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3765")
 
-[node name="Avatar" type="TextureRect" parent="Control/PlayerInfoBox/AvatarFrame"]
+[node name="Avatar" type="TextureRect" parent="CharacterBody2D/Control/PlayerInfoBox/AvatarFrame"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -534,7 +541,7 @@ anchor_bottom = 0.91
 offset_bottom = 3.6
 texture = ExtResource("4_q17rd")
 
-[node name="CharacterName" type="Label" parent="Control/PlayerInfoBox"]
+[node name="CharacterName" type="Label" parent="CharacterBody2D/Control/PlayerInfoBox"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 8.0
@@ -545,7 +552,7 @@ text = "JumperMan"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ExperienceBar" type="ProgressBar" parent="Control/PlayerInfoBox"]
+[node name="ExperienceBar" type="ProgressBar" parent="CharacterBody2D/Control/PlayerInfoBox"]
 self_modulate = Color(0, 1, 0.384314, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -558,21 +565,21 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 11
 
-[node name="CoinCounter" type="Panel" parent="Control"]
+[node name="CoinCounter" type="Panel" parent="CharacterBody2D/Control"]
 self_modulate = Color(1, 1, 1, 0.407843)
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -152.0
-offset_top = 24.0
-offset_right = -20.0
-offset_bottom = 80.0
+offset_left = -408.0
+offset_top = -224.0
+offset_right = -276.0
+offset_bottom = -168.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_q5vhg")
 
-[node name="Coin" type="TextureRect" parent="Control/CoinCounter"]
+[node name="Coin" type="TextureRect" parent="CharacterBody2D/Control/CoinCounter"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -587,7 +594,7 @@ grow_vertical = 2
 texture = ExtResource("5_mchfq")
 expand_mode = 1
 
-[node name="CoinText" type="Label" parent="Control/CoinCounter"]
+[node name="CoinText" type="Label" parent="CharacterBody2D/Control/CoinCounter"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 16.0
@@ -599,7 +606,7 @@ text = "Coins
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CoinCount" type="Label" parent="Control/CoinCounter"]
+[node name="CoinCount" type="Label" parent="CharacterBody2D/Control/CoinCounter"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 16.0

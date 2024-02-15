@@ -256,10 +256,8 @@ script = ExtResource("1_tj3i8")
 texture_filter = 1
 scale = Vector2(1.75, 1.90625)
 sprite_frames = SubResource("SpriteFrames_btrbs")
-animation = &"hit"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_wq2u7")
