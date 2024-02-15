@@ -11,9 +11,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	#Animations
-	sprite_2d.animation = "default"
-	if (velocity.x > 1 || velocity.x<-1):
+
+	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "running"
+		print(velocity.x)
 	else:
 		sprite_2d.animation = "default"
 	
@@ -31,7 +32,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 12)
 
 	move_and_slide()
 	
