@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://di0j4yv4rgbsy"]
+[gd_scene load_steps=12 format=3 uid="uid://di0j4yv4rgbsy"]
 
 [ext_resource type="Texture2D" uid="uid://c00o0qt2laqit" path="res://Pink.png" id="1_u30n5"]
 [ext_resource type="Texture2D" uid="uid://c2r5t5f1lncg7" path="res://Terrain (16x16).png" id="2_2udil"]
 [ext_resource type="PackedScene" uid="uid://bpdb6xbdaoswi" path="res://scenes/main_character.tscn" id="3_ymye8"]
 [ext_resource type="Texture2D" uid="uid://3bay5236wurd" path="res://scenes/main_character_assets/Jump (32x32).png" id="4_q17rd"]
 [ext_resource type="Texture2D" uid="uid://w1wq5bcpi8ia" path="res://scenes/ui_assets/token.svg" id="5_mchfq"]
+[ext_resource type="PackedScene" uid="uid://djp3yvt64nb2i" path="res://scenes/collectible.tscn" id="6_m0mg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm7k3"]
 texture = ExtResource("2_2udil")
@@ -619,3 +620,35 @@ theme_override_font_sizes/font_size = 13
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Collectible" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(64, 16)
+
+[node name="Collectible2" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(376, 136)
+
+[node name="Collectible3" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(808, 304)
+
+[node name="Collectible4" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(432, 400)
+
+[node name="Collectible5" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(992, 208)
+
+[node name="Collectible6" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(160, 600)
+
+[node name="Collectible7" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(1224, 560)
+
+[node name="Collectible8" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(1232, 408)
+
+[node name="Collectible9" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(1400, 168)
+
+[node name="Collectible10" parent="." instance=ExtResource("6_m0mg4")]
+position = Vector2(1912, 256)
+
+[node name="Node" type="Node" parent="."]
